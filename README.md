@@ -76,6 +76,16 @@ The system is divided into three main layers:
 ┌─────────────────────────────────────────────┐
 │                 Hardware Layer              │
 │                                             │
-│ ESP8266 │ Servo │ IR │ LCD │ Buttons       │
-│ RGB LED │ Buzzer │ RTC                     │
+│ ESP8266 │ Servo │ IR │ LCD │ Buttons        │
+│ RGB LED │ Buzzer │ RTC                      │
 └─────────────────────────────────────────────┘
+
+
+Circuit / Hardware Setup
+<img width="467" height="170" alt="image" src="https://github.com/user-attachments/assets/ba886e17-4aa9-49b0-a751-286e5ada17f2" />
+
+<img width="454" height="393" alt="image" src="https://github.com/user-attachments/assets/74926b77-8d83-4756-bd32-540be746b880" />
+
+Blynk Interface
+
+<img width="540" height="1170" alt="image" src="https://github.com/user-attachments/assets/419643d4-c652-473d-94cf-208ab29f40e1" />
