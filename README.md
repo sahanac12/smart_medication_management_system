@@ -80,7 +80,7 @@ The system is divided into three main layers:
 │ RGB LED │ Buzzer                            │
 └─────────────────────────────────────────────┘
 
-
+```
 
 
 1. Hardware Layer
@@ -196,7 +196,7 @@ Allows the user to configure medication alarm times.
 SET_DOSE
 
 Allows the user to configure the quantity of medication to be dispensed.
-
+```
                  ┌───────────────┐
                  │     NORMAL    │
                  │ Default State │
@@ -208,6 +208,8 @@ Allows the user to configure the quantity of medication to be dispensed.
              ┌──────────┐ ┌──────────┐
              │ SET_TIME │ │ SET_DOSE │
              └──────────┘ └──────────┘
+
+```
 4. Medication Scheduling and Dispensing
 
 The system periodically checks the current time against the configured medication alarm times.
@@ -221,6 +223,7 @@ The IR sensor checks whether the pill has been dispensed.
 The RGB LED indicates the dispensing status.
 The event is sent to the Blynk IoT platform.
 Dispensing Flow
+```
 Scheduled Time Reached
           │
           ▼
@@ -251,12 +254,13 @@ Scheduled Time Reached
      └──────┬───────┘
             ▼
        Blynk Event
+```
 5. Manual Dispensing
 
 The user can manually initiate medication dispensing using the dedicated push button.
 
 The manual dispensing process follows the same basic mechanism:
-
+```
 Button Press
      │
      ▼
@@ -273,6 +277,7 @@ IR Sensor Verification
      │
      ▼
 Status Displayed
+```
 6. Cloud Integration Layer
 Blynk IoT
 
@@ -296,7 +301,7 @@ These events can be monitored through the Blynk platform and used to notify the 
 7. NTP Time Synchronization
 
 The system uses an NTP server to obtain accurate network time for medication scheduling.
-
+```
              Wi-Fi
 ESP8266 ─────────────────► pool.ntp.org
                               │
@@ -305,12 +310,13 @@ ESP8266 ─────────────────► pool.ntp.org
                               │
                               ▼
                     Medication Scheduler
-
+```
 The system is configured for India Standard Time (IST), UTC+5:30.
 
 NTP synchronization helps ensure that scheduled medication alarms are based on an accurate system clock.
 
 8. Complete System Workflow
+ ```
                          ┌─────────────── ┐
                          │    ESP8266     │
                          │ Main Controller│
@@ -339,7 +345,7 @@ NTP synchronization helps ensure that scheduled medication alarms are based on a
          Dispensing    Status      Buzzer /
                                    RGB LED
 
-
+```
 
 Circuit / Hardware Setup
 <img width="410" height="163" alt="image" src="https://github.com/user-attachments/assets/0e078177-8a9d-4c71-ac4c-0c5054515732" />
