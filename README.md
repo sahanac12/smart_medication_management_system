@@ -49,7 +49,7 @@ o	Blynk IoT Platform: The ESP8266 connects to Blynk using a predefined authentic
 
 o	NTP Server: The system fetches accurate time from “pool.ntp.org” (configured for GMT+5:30, India), ensuring reliable scheduling.
 
-<img width="540" height="1170" alt="image" src="https://github.com/user-attachments/assets/919d1242-7129-4ccf-a9e0-e1b4ac7ff3b1" />
+<img width="400" height="1000" alt="image" src="https://github.com/user-attachments/assets/919d1242-7129-4ccf-a9e0-e1b4ac7ff3b1" />
 
 
 <img width="467" height="170" alt="image" src="https://github.com/user-attachments/assets/ba886e17-4aa9-49b0-a751-286e5ada17f2" />
