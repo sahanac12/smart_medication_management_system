@@ -347,11 +347,14 @@ NTP synchronization helps ensure that scheduled medication alarms are based on a
 
 ```
 
-Circuit / Hardware Setup
-<img width="410" height="163" alt="image" src="https://github.com/user-attachments/assets/0e078177-8a9d-4c71-ac4c-0c5054515732" />
-<img width="535" height="564" alt="image" src="https://github.com/user-attachments/assets/a7177f4d-4af5-49f4-bb01-d688ebc51501" />
+## Circuit / Hardware Setup
 
-<img width="403" height="412" alt="image" src="https://github.com/user-attachments/assets/025f0378-307c-48ca-bceb-ba3a9096cc19" />
+<img width="410" height="163" alt="Circuit / Hardware Setup" src="https://github.com/user-attachments/assets/0e078177-8a9d-4c71-ac4c-0c5054515732" />
 
-Blynk Interface
-<img width="540" height="1170" alt="image" src="https://github.com/user-attachments/assets/0b7bb0ff-1f76-4f4d-8e65-26828270ceef" />
+<img width="535" height="564" alt="Circuit / Hardware Setup" src="https://github.com/user-attachments/assets/a7177f4d-4af5-49f4-bb01-d688ebc51501" />
+
+<img width="403" height="412" alt="Circuit / Hardware Setup" src="https://github.com/user-attachments/assets/025f0378-307c-48ca-bceb-ba3a9096cc19" />
+
+## Blynk Interface
+
+<img width="540" height="1170" alt="Blynk Interface" src="https://github.com/user-attachments/assets/0b7bb0ff-1f76-4f4d-8e65-26828270ceef" />
