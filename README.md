@@ -1,60 +1,81 @@
-# smart_medication_management_system
+# Smart Medication Management System
 
-Tools and Technologies
-●	Hardware: ESP8266, SG90 servo, IR sensor, 16x2 LCD (I2C), push buttons, RGB LED, buzzer, RTC module.
-●	Software: Arduino IDE, C++, Blynk platform, NTP server.
-●	Development Environment: Breadboard/PCB for prototyping, USB power supply, WiFi router for connectivity.
+An IoT-based automated medication dispensing system designed to help users manage scheduled medication, dispense doses automatically, and provide remote monitoring and caregiver notifications.
 
+---
 
-System Architecture
+## Features
 
-The architecture is divided into three main layers: Hardware Layer, Software Layer, and Cloud Integration Layer, each contributing to the system’s functionality.
-1.	Hardware Layer: 
+- Automated pill dispensing based on scheduled alarm times
+- Configurable medication dose quantity
+- Manual pill dispensing using push buttons
+- IR sensor-based pill dispensing verification
+- 16×2 LCD display for system information
+- RGB LED and buzzer for status and medication alerts
+- Wi-Fi connectivity using ESP8266
+- Remote monitoring and control using Blynk IoT
+- Caregiver notifications for medication events
+- NTP-based time synchronization
+- Multiple operating modes for configuration and normal operation
 
-o	ESP8266 Microcontroller: Acts as the central processing unit, managing all input/output operations, WiFi connectivity, and logic execution. Its dual-core processor and built-in WiFi module make it ideal for IoT applications.
+---
 
-o	Servo Motor (SG90): It controls the mechanical dispensing mechanism, rotating to release a precise number of pills (up to five per dispense) based on predefined angles (0° to 180°).
+## Tools and Technologies
 
-o	IR Sensor: It detects dispensed pills by sensing interruptions in its beam, providing feedback on whether medication was successfully dispensed.
+### Hardware
 
-o	LiquidCrystal I2C Display (16x2): A 16x2 LCD with an I2C interface (address 0x27) displays real-time information, including current time, next alarm, dose settings, and system status.
+- **ESP8266** – Main microcontroller
+- **SG90 Servo Motor** – Pill dispensing mechanism
+- **IR Sensor** – Pill dispensing detection
+- **16×2 LCD with I2C** – System information display
+- **Push Buttons** – User input and configuration
+- **RGB LED** – Visual status indication
+- **Buzzer** – Audible alerts
+- **RTC Module** – Timekeeping support
 
-o	Push Buttons: Three buttons for manual dispense, time setting and dose setting with internal pull-up resistors allow users to interact with the system for manual dispensing and configuration.
+### Software
 
-o	RGB LED: Provides visual status indicators: blue for idle, green for successful dispensing, and red for missed doses.
+- **Arduino IDE**
+- **C/C++**
+- **Blynk IoT Platform**
+- **NTP (Network Time Protocol)**
 
-o	Buzzer: Generates auditory alerts during dispensing events or alarms.
+### Development Environment
 
-2.	Software Layer: 
+- Breadboard/PCB for prototyping
+- USB power supply
+- Wi-Fi router for network connectivity
 
-o	Firmware: Written in C++ using the Arduino framework, the firmware runs on the ESP8266 and manages hardware interactions, timekeeping, and dispensing logic.
+---
 
-o	Libraries: 
-▪	WiFi.h: Handles WiFi connectivity to connect to the internet for NTP and Blynk integration.
-▪	BlynkSimpleEsp32.h: Facilitates communication with the Blynk IoT platform for remote monitoring and notifications.
-▪	LiquidCrystal_I2C.h: Controls the LCD for displaying system information.
-▪	ESP32Servo.h: Manages servo motor operations for precise dispensing.
-▪	time.h: Enables NTP-based time synchronization, complementing the RTC module.
+# System Architecture
 
-o	State Management: The system operates in three menu states—NORMAL (default operation), SET_TIME (for configuring alarm times), and SET_DOSE (for setting dose quantities)—controlled via button inputs.
+The system is divided into three main layers:
 
-o	Logic Flow: 
-▪	Alarm Checking: Every 30 seconds, the system compares the current time with four predefined alarm times to trigger automatic dispensing.
-▪	Dispensing: Servo rotates to dispense pills (40° per dose), with the IR sensor verifying each dispense. RGB LEDs and the buzzer provide feedback.
-▪	User Interaction: Buttons allow manual dispensing and configuration of alarms and doses, with the LCD updating to reflect the current state.
+1. Hardware Layer
+2. Software Layer
+3. Cloud Integration Layer
 
-3.	Cloud Integration Layer: 
-
-o	Blynk IoT Platform: The ESP8266 connects to Blynk using a predefined authentication token, enabling remote monitoring. Events such as successful dispensing (“pill_taken”) or missed doses (“pill_missed”) are logged, and notifications are sent to users or caregivers via the Blynk app.
-
-o	NTP Server: The system fetches accurate time from “pool.ntp.org” (configured for GMT+5:30, India), ensuring reliable scheduling.
-
-<img width="400" height="1000" alt="image" src="https://github.com/user-attachments/assets/919d1242-7129-4ccf-a9e0-e1b4ac7ff3b1" />
-
-
-<img width="467" height="170" alt="image" src="https://github.com/user-attachments/assets/ba886e17-4aa9-49b0-a751-286e5ada17f2" />
-
-<img width="454" height="393" alt="image" src="https://github.com/user-attachments/assets/74926b77-8d83-4756-bd32-540be746b880" />
-
-
-
+```text
+┌─────────────────────────────────────────────┐
+│             Cloud Integration Layer         │
+│                                             │
+│       Blynk IoT          NTP Server         │
+│           │                   │             │
+└───────────┼───────────────────┼─────────────┘
+            │                   │
+            ▼                   ▼
+┌─────────────────────────────────────────────┐
+│                Software Layer               │
+│                                             │
+│ Scheduling │ State Management │ Dispensing  │
+│ Timekeeping │ User Interaction │ Alerts     │
+└──────────────────────┬──────────────────────┘
+                       │
+                       ▼
+┌─────────────────────────────────────────────┐
+│                 Hardware Layer              │
+│                                             │
+│ ESP8266 │ Servo │ IR │ LCD │ Buttons       │
+│ RGB LED │ Buzzer │ RTC                     │
+└─────────────────────────────────────────────┘
