@@ -1,6 +1,13 @@
 # smart_medication_management_system
 
+Tools and Technologies
+●	Hardware: ESP8266, SG90 servo, IR sensor, 16x2 LCD (I2C), push buttons, RGB LED, buzzer, RTC module.
+●	Software: Arduino IDE, C++, Blynk platform, NTP server.
+●	Development Environment: Breadboard/PCB for prototyping, USB power supply, WiFi router for connectivity.
+
+
 System Architecture
+
 The architecture is divided into three main layers: Hardware Layer, Software Layer, and Cloud Integration Layer, each contributing to the system’s functionality.
 1.	Hardware Layer: 
 
@@ -40,7 +47,10 @@ o	Logic Flow:
 
 o	Blynk IoT Platform: The ESP8266 connects to Blynk using a predefined authentication token, enabling remote monitoring. Events such as successful dispensing (“pill_taken”) or missed doses (“pill_missed”) are logged, and notifications are sent to users or caregivers via the Blynk app.
 
-o	NTP Server: The system fetches accurate time from “pool.ntp.org” (configured for GMT+5:30, India) ensuring reliable scheduling.
+o	NTP Server: The system fetches accurate time from “pool.ntp.org” (configured for GMT+5:30, India), ensuring reliable scheduling.
+
+<img width="540" height="1170" alt="image" src="https://github.com/user-attachments/assets/919d1242-7129-4ccf-a9e0-e1b4ac7ff3b1" />
+
 
 <img width="467" height="170" alt="image" src="https://github.com/user-attachments/assets/ba886e17-4aa9-49b0-a751-286e5ada17f2" />
 
